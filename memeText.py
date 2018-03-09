@@ -7,7 +7,7 @@ class MemeGen:
         self.alphabet = alphabet
 
     def symbols(self, phrase):
-        return [self.alphabet.get(x) for x in phrase.lower()]
+        return [self.alphabet.get(x) for x in phrase]
 
     def lines(self, symbols, space, padding=1):
         lines = ['' for x in range(self.alphabet.get('height'))]
@@ -19,12 +19,15 @@ class MemeGen:
 
         return lines
 
-    def create(self, phrase, fill, space, style='partition', choice='alternate'):
+    def create(self, phrase, fill, space, style='partition', choice='alternate', shape=False):
+        if shape:
+            phrase = phrase.split(',')
+
         symbols = self.symbols(phrase)
 
         fill = fill.split(',')
         space = space.split(',')
-        
+
         if choice is 'random':
             fill = random.shuffle(choice)
             space = space.shuffle(choice)
