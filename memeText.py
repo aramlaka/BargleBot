@@ -9,12 +9,13 @@ class MemeGen:
     def symbols(self, phrase):
         return [self.alphabet.get(x) for x in phrase.lower()]
 
-    def lines(self, symbols):
+    def lines(self, symbols, space, padding=1):
         lines = ['' for x in range(self.alphabet.get('height'))]
 
         for symbol in symbols:
             for i, line in enumerate(symbol.split("\n")):
-                lines[i] += line
+                pad = padding * space[i % len(space)]
+                lines[i] += pad + line + pad
 
         return lines
 
@@ -23,20 +24,19 @@ class MemeGen:
 
         fill = fill.split(',')
         space = space.split(',')
+        
+        if choice is 'random':
+            fill = random.shuffle(choice)
+            space = space.shuffle(choice)
 
         for i, symbol in enumerate(symbols):
-
-            if choice is 'alternate':
-                symbols[i] = symbol.replace('+', fill[i % len(fill)]).\
-                    replace('-', space[i % len(space)])
-            elif choice is 'random':
-                symbols[i] = symbol.replace('+', random.choice(fill))\
-                    .replace('-', random.choice(space))
+            symbols[i] = symbol.replace('+', fill[i % len(fill)]).\
+                replace('-', space[i % len(space)])
 
         if style is 'lines':
-            return self.lines(symbols)
+            return self.lines(symbols, space)
         elif style is 'whole':
-            return '\n'.join(self.lines(symbols))
+            return '\n'.join(self.lines(symbols, space))
 
         return symbols
 

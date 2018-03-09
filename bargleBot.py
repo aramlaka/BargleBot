@@ -25,6 +25,11 @@ async def draw(ctx, phrase: str, fill: str, space: str):
     for line in meme:
         await ctx.send(line)
 
+@bot.command()
+async def drawline(ctx, phrase: str, fill: str, space: str):
+    meme = mText.create(phrase, fill, space, style='lines')
+    for line in meme:
+        await ctx.send(line)
 
 @bot.command()
 async def help(ctx):
