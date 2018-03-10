@@ -37,6 +37,8 @@ class MemeGen:
                 replace('-', space[i % len(space)])
 
         if style is 'lines':
+            if shape:
+                return self.lines(symbols, space, padding=0)
             return self.lines(symbols, space)
         elif style is 'whole':
             return '\n'.join(self.lines(symbols, space))
