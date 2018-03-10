@@ -10,6 +10,7 @@ BOT_COLOR = 0x1464e5
 COMMAND_PREFIX = '~'
 botAdj = ['rogue', 'stupid', 'loyal', 'pretty', 'gay', 'criminal', 'nut']
 shitList = ['freddie', 'pupper', 'akhil', 'lily', 'ahri']
+validShapes = ','.join([shape for shape in symbols.shapes if shape is not 'height'])
 
 bot = commands.Bot(command_prefix=COMMAND_PREFIX, description="Akhil's loyal bargle bot.")
 bot.remove_command('help')
@@ -51,14 +52,7 @@ async def drawline(message, phrase: str, fill: str, space: str):
 async def drawshape(message, shape: str, fill: str, space: str):
     if shape not in symbols.shapes:
         response = "Invalid shape.\n" \
-                   "Valid shapes are: ["
-
-        for shape in symbols.shapes:
-            if shape is not 'height':
-                response += shape + ","
-
-        response += "]"
-
+                   "Valid shapes are: [" + validShapes + "]"
         await message.send(response)
     else:
         meme = mShapes.create(shape.lower(), fill, space, shape=True, style='lines')
@@ -95,7 +89,6 @@ async def emoji(message):
 
 @bot.command()
 async def help(message):
-    validShapes = ','.join([shape for shape in symbols.shapes if shape is not 'height'])
 
     embed = discord.Embed(title="Bargle Bot", description="Akhil's " + random.choice(botAdj) + " bot." +
                                                           "\nCommands are the following: \n",
