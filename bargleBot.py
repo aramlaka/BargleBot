@@ -10,7 +10,7 @@ BOT_COLOR = 0x1464e5
 COMMAND_PREFIX = '~'
 botAdj = ['rogue', 'stupid', 'loyal', 'pretty', 'gay', 'criminal', 'nut']
 shitList = ['freddie', 'pupper', 'akhil', 'lily', 'ahri']
-validShapes = ','.join([shape for shape in symbols.shapes if shape is not 'height'])
+validShapes = ','.join([shape for shape in symbols.shapes if shape != 'height'])
 foodItems = [':green_apple:', ':apple:', ':pear:', ':tangerine:', ':tangerine:', ':lemon:', ':banana:', ':watermelon:',
              ':grapes:', ':strawberry:', ':melon:', ':cherries:', ':peach:', ':pineapple:', ':tomato:', ':eggplant:',
              ':hot_pepper:', ':corn:', ':sweet_potato:', ':honey_pot:', ':bread:', ':cheese:', ':poultry_leg:',
@@ -126,14 +126,14 @@ async def menu(context):
 async def claimwaifu(context):
     waifu = context.message.mentions
 
-    if len(waifu) is 0:
+    if len(waifu) == 0:
         await context.send("Invalid claim. Not like you'd even get anyone anyway.")
         return 0
 
     waifu = waifu[0].name
     author = context.author.name
 
-    if claims.get(author) is waifu:
+    if claims.get(author) == waifu:
         await context.send("You already claimed " + waifu + "!")
         return 0
     else:
@@ -150,7 +150,7 @@ async def waifus(context):
     embed = discord.Embed(title=context.guild.name + " Waifus", description="Absolutely Disgusting",
                           color=BOT_COLOR)
 
-    if len(claims) is 0:
+    if len(claims) == 0:
         embed.add_field(name='Nobody has a waifu right now. Hooray!', value=':thinking:')
 
     for weeb in claims:
