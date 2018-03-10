@@ -9,6 +9,7 @@ from discord.ext import commands
 BOT_COLOR = 0x1464e5
 COMMAND_PREFIX = '~'
 botAdj = ['rogue', 'stupid', 'loyal', 'pretty', 'gay', 'criminal', 'nut']
+shitList = ['freddie', 'pupper', 'akhil', 'lily', 'ahri']
 
 bot = commands.Bot(command_prefix=COMMAND_PREFIX, description="Akhil's loyal bargle bot.")
 bot.remove_command('help')
@@ -21,6 +22,15 @@ async def on_ready():
     print('Login successful')
     print('User: ', bot.user.name)
     print('ID: ', bot.user.id)
+
+
+#@bot.event
+#async def on_message(message):
+#    if any(emoji in message.content for emoji in ['👖']):
+#        channel = message.channel
+#        embed = discord.Embed(title='🦆👖', color=BOT_COLOR)
+#        embed.add_field(name='ohno', value='https://www.youtube.com/watch?v=1PaKYvMdH3o')
+#        await channel.send(embed=embed)
 
 
 @bot.command()
@@ -70,8 +80,6 @@ async def meme(message):
 
 @bot.command()
 async def hi(message):
-    shitList = ['freddie', 'pupper', 'akhil', 'lily', 'ahri']
-
     if any(name in message.author.name.lower() for name in shitList):
         response = "fuck off " + message.author.name
     else:
