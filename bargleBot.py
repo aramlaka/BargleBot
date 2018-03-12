@@ -10,4 +10,5 @@ async def on_ready():
     print('User: ', client.user.name)
     print('ID: ', client.user.id)
 
+
 client.run(discord_token.test_token)

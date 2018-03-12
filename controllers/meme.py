@@ -63,4 +63,3 @@ async def hi(context):
 @client.command()
 async def emoji(context):
     await context.send("i don't have nitro :(")
-

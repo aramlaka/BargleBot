@@ -4,7 +4,6 @@ import defaults
 
 from clientWrapper import client
 
-
 foodItems = [':green_apple:', ':apple:', ':pear:', ':tangerine:', ':tangerine:', ':lemon:', ':banana:', ':watermelon:',
              ':grapes:', ':strawberry:', ':melon:', ':cherries:', ':peach:', ':pineapple:', ':tomato:', ':eggplant:',
              ':hot_pepper:', ':corn:', ':sweet_potato:', ':honey_pot:', ':bread:', ':cheese:', ':poultry_leg:',
@@ -15,7 +14,8 @@ foodItems = [':green_apple:', ':apple:', ':pear:', ':tangerine:', ':tangerine:',
              ':birthday:', ':custard:', ':candy:', ':lollipop:', ':chocolate_bar:', ':popcorn:', ':doughnut:',
              ':cookie:',
              ':beer:', ':beers:', ':wine_glass:', ':cocktail:', ':tropical_drink:', ':champagne:', ':sake:', ':tea:',
-             ':coffee:', ':baby_clienttle:', ':croissant:', ':avocado:', ':cucumber:', ':bacon:', ':potato:', ':carrot:',
+             ':coffee:', ':baby_clienttle:', ':croissant:', ':avocado:', ':cucumber:', ':bacon:', ':potato:',
+             ':carrot:',
              ':french_bread:', ':salad:', ':shallow_pan_of_food:', ':stuffed_flatbread:', ':tumbler_glass:', ':egg:',
              ':milk:', ':peanuts:', ':kiwi:', ':pancakes:']
 

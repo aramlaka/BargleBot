@@ -11,10 +11,11 @@ client.remove_command('help')
 
 clientAdj = ['rogue', 'stupid', 'loyal', 'pretty', 'gay', 'criminal', 'nut']
 
+
 @client.command()
 async def help(context):
     embed = discord.Embed(title="Bargle client", description="Akhil's " + random.choice(clientAdj) + " client." +
-                                                          "\nCommands are the following: \n",
+                                                             "\nCommands are the following: \n",
                           color=defaults.CLIENT_COLOR)
 
     embed.add_field(name=defaults.COMMAND_PREFIX + "draw [phrase] [fill,] [space,]",

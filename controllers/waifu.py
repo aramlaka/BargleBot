@@ -2,9 +2,13 @@ from clientWrapper import client
 
 import discord
 import defaults
+import redis
 
 claims = {}
 
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
+r.set('weeb', 'no')
+r.get('weeb')
 
 @client.command()
 async def claimwaifu(context):
