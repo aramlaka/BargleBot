@@ -49,4 +49,4 @@ async def waifus(context):
 
 @client.command()
 async def succ(context):
-    await context.send(str(r.get('weeb')['waifus']))
+    await context.send(str(dict(r.get('weeb'))['waifus']))
