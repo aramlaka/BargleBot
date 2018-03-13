@@ -1,7 +1,7 @@
 import discord_token
 
-from clientWrapper import client
-from controllers import food, meme, info, test, waifu
+from utils.clientWrapper import client
+from controllers import food, info, meme, waifu, test
 
 
 @client.event

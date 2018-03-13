@@ -1,8 +1,8 @@
 import random
 import discord
-import defaults
+from assets import defaults
 
-from clientWrapper import client
+from utils.clientWrapper import client
 
 foodItems = [':green_apple:', ':apple:', ':pear:', ':tangerine:', ':tangerine:', ':lemon:', ':banana:', ':watermelon:',
              ':grapes:', ':strawberry:', ':melon:', ':cherries:', ':peach:', ':pineapple:', ':tomato:', ':eggplant:',
