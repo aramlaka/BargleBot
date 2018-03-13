@@ -7,7 +7,6 @@ import redis
 claims = {}
 
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
-r.set('weeb', 'no')
 r.set('waifus', {'waifu':'gay'})
 
 @client.command()
@@ -49,4 +48,4 @@ async def waifus(context):
 
 @client.command()
 async def succ(context):
-    await context.send(str(dict(r.get('weeb'))['waifus']))
+    await context.send(str(dict(r.get('waifus'))['waifu']))
