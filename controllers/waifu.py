@@ -8,7 +8,6 @@ claims = {}
 
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 r.set('weeb', 'no')
-r.get('weeb')
 
 @client.command()
 async def claimwaifu(context):
@@ -46,3 +45,7 @@ async def waifus(context):
         embed.add_field(name=weeb, value='Waifu: ' + claims[weeb], inline=False)
 
     await context.send(embed=embed)
+
+@client.command()
+async def succ(context):
+    await context.send(r.get('weeb'))
