@@ -1,9 +1,13 @@
-from utils.clientWrapper import client
+from clientWrapper import client
 
 import discord
-from assets import defaults
+import defaults
+import redis
 
 claims = {}
+
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
+r.set('waifus', {'waifu':'gay'})
 
 @client.command()
 async def claimwaifu(context):
@@ -42,3 +46,6 @@ async def waifus(context):
 
     await context.send(embed=embed)
 
+@client.command()
+async def succ(context):
+    await context.send(str(dict(r.get('waifus'))['waifu']))

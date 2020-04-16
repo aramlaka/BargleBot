@@ -1,8 +1,8 @@
 import discord
-from assets import defaults
+import defaults
 import random
 
-from utils.clientWrapper import client
+from clientWrapper import client
 from utils import symbols
 
 validShapes = ','.join([shape for shape in symbols.shapes if shape != 'height'])

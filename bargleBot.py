@@ -1,7 +1,7 @@
 import discord_token
 
-from utils.clientWrapper import client
-from controllers import food, info, meme, waifu, test
+from clientWrapper import client
+from controllers import food, meme, info, test, waifu
 
 def bargle_bot(evt, ctx):
     client.run(discord_token.test_token)

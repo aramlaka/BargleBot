@@ -1,12 +1,3 @@
-import discord
-
-from utils.clientWrapper import client
-
-@client.command()
-async def guilds(context):
-    for guild in client.guilds:
-        await context.send("Name: " + guild.name + '\nID: ' + str(guild.id))
-
 # @client.event
 # async def on_context(context):
 #    if any(emoji in context.content for emoji in ['👖']):

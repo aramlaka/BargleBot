@@ -1,8 +1,8 @@
 import discord
-from assets import defaults
+import defaults
 
 from utils import symbols, memeText
-from utils.clientWrapper import client
+from clientWrapper import client
 
 botAdj = ['rogue', 'stupid', 'loyal', 'pretty', 'gay', 'criminal', 'nut']
 shitList = ['freddie', 'pupper', 'akhil', 'lily', 'ahri']
@@ -63,5 +63,3 @@ async def hi(context):
 @client.command()
 async def emoji(context):
     await context.send("i don't have nitro :(")
-
-
